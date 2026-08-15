@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>True Sky vs. Tropical Grid | StarChart 13</title>
+<meta name="description" content="See the real gap between mainstream tropical astrology and the true sky, planet by planet — live ecliptic data, real IAU constellations, and proof you can verify yourself.">
+<meta name="theme-color" content="#06001a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="starfield" aria-hidden="true"></canvas>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top">
+      <span class="brand-glyph">⛎</span>
+      <span class="brand-text">STAR<span>CHART</span>13</span>
+    </a>
+    <a class="btn btn-ghost" href="https://starchart13.com" target="_blank" rel="noopener">Get your true‑sky chart →</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <p class="eyebrow">Tropical Grid vs. True Sky · live ecliptic data</p>
+      <h1>Your zodiac sign was drawn by a calendar, <em>not the sky.</em></h1>
+      <p class="hero-sub">Mainstream astrology locks every planet into 12 equal 30° slices, a grid fixed nearly 2,000 years ago. The sky never agreed to it. Thirteen real constellations of uneven width sit along the ecliptic today — and right now, several planets are sitting somewhere the grid says they aren't.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://starchart13.com" target="_blank" rel="noopener">Verify your actual chart placements against the real sky at StarChart 13</a>
+        <a class="btn btn-outline" href="#matrix">See tonight's discrepancies ↓</a>
+      </div>
+      <p class="hero-meta" id="hero-timestamp">Loading live sky position…</p>
+    </div>
+  </section>
+
+  <!-- WHAT'S GOING ON -->
+  <section class="explainer">
+    <div class="wrap explainer-grid">
+      <div class="explainer-card">
+        <span class="tag tag-grid">Tropical Grid</span>
+        <h3>What most horoscopes use</h3>
+        <p>12 signs, 30° each, tied to the seasons rather than the stars. Pluto "enters Aquarius" the instant the calendar-grid says so — whether or not anything is actually there.</p>
+      </div>
+      <div class="explainer-card">
+        <span class="tag tag-sky">True Sky</span>
+        <h3>What a telescope actually sees</h3>
+        <p>13 constellations of unequal width, mapped by the IAU in 1930 from real star boundaries — including Ophiuchus, the constellation the tropical grid leaves out entirely.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE DISCREPANCY MATRIX -->
+  <section class="matrix-section" id="matrix">
+    <div class="wrap">
+      <p class="eyebrow">Live comparison</p>
+      <h2>Tonight's discrepancy matrix</h2>
+      <p class="section-sub">Calculated in your browser from real planetary ephemeris data — the same math astronomers use — the instant this page loads.</p>
+
+      <div class="matrix-controls">
+        <label class="toggle">
+          <input type="checkbox" id="mismatch-only">
+          <span>Show mismatches only</span>
+        </label>
+        <button class="btn btn-small btn-outline" id="refresh-matrix">Recalculate now</button>
+      </div>
+
+      <div class="matrix-table-wrap">
+        <table class="matrix-table" id="matrix-table">
+          <thead>
+            <tr>
+              <th>Body</th>
+              <th>Tropical Grid says</th>
+              <th>True Sky says</th>
+              <th>Ecliptic band</th>
+              <th>Verdict</th>
+            </tr>
+          </thead>
+          <tbody id="matrix-body">
+            <tr><td colspan="5" class="matrix-loading">Calculating live planetary positions…</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="matrix-footnote" id="matrix-footnote"></p>
+    </div>
+  </section>
+
+  <!-- PROOF GALLERY -->
+  <section class="proof-section" id="proof">
+    <div class="wrap">
+      <p class="eyebrow">Show your work</p>
+      <h2>Proof, not vibes</h2>
+      <p class="section-sub">Every card below is a real screenshot: an ephemeris data table, a natal wheel, and a live sky-mapping app, cross-checked against each other. Drop your own captures into <code>assets/proof/</code> to swap these out.</p>
+
+      <div class="proof-grid">
+        <figure class="proof-card">
+          <img src="assets/proof/ephemeris-table.jpg" alt="Ephemeris data table showing house, sign, and constellation columns for each planet, with Pluto listed at 3° Capricorn while retrograde">
+          <figcaption>
+            <strong>Data table proof</strong>
+            <p>Sign column vs. Constellation column, side by side, straight from the ephemeris — no interpretation required.</p>
+          </figcaption>
+        </figure>
+        <figure class="proof-card">
+          <img src="assets/proof/natal-wheel.jpg" alt="A 13-sign natal chart wheel with planetary glyphs and aspect lines">
+          <figcaption>
+            <strong>True-sky wheel proof</strong>
+            <p>The same moment, plotted on a 13-sign wheel that keeps each constellation's real width instead of forcing 30° slices.</p>
+          </figcaption>
+        </figure>
+        <figure class="proof-card">
+          <img src="assets/proof/sky-map.jpg" alt="Stellarium sky map showing Pluto positioned inside the constellation Capricornus near the Aquarius border">
+          <figcaption>
+            <strong>Sky-map proof</strong>
+            <p>Pluto rendered against the real constellation outlines in a sky-mapping app — verifiable by anyone, tonight, with a phone.</p>
+          </figcaption>
+        </figure>
+        <figure class="proof-card">
+          <img src="assets/proof/wheel-detail.jpg" alt="Close-up of the natal wheel showing Pluto's degree marker sitting on the house 6/7 boundary">
+          <figcaption>
+            <strong>Close-up detail</strong>
+            <p>Zoomed on the exact degree marker — this is the kind of precision that gets lost when everything gets rounded to a clean 30°.</p>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="proof-cta">
+        <a class="btn btn-primary" href="https://starchart13.com" target="_blank" rel="noopener">Verify your actual chart placements against the real sky at StarChart 13</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="wrap cta-banner-inner">
+      <h2>Check your own placements against the real sky.</h2>
+      <p>Enter your birth details once and see both charts side by side — tropical grid and true sky, planet for planet.</p>
+      <a class="btn btn-primary btn-large" href="https://starchart13.com" target="_blank" rel="noopener">Generate my true-sky chart at StarChart13.com</a>
+    </div>
+  </section>
+
+  <!-- SOCIAL POST GENERATOR -->
+  <section class="social-section" id="social">
+    <div class="wrap">
+      <p class="eyebrow">Spread the gap</p>
+      <h2>Post generator</h2>
+      <p class="section-sub">Pulls tonight's single biggest live discrepancy and builds a ready-to-paste post for each platform. Copy, paste, post.</p>
+
+      <div class="social-tabs" role="tablist">
+        <button class="social-tab is-active" data-platform="tiktok" role="tab" aria-selected="true">TikTok</button>
+        <button class="social-tab" data-platform="instagram" role="tab" aria-selected="false">Instagram</button>
+        <button class="social-tab" data-platform="facebook" role="tab" aria-selected="false">Facebook</button>
+      </div>
+
+      <div class="social-panel" id="panel-tiktok" data-platform-panel="tiktok">
+        <div class="social-card">
+          <h3>Hook-driven script</h3>
+          <pre class="social-copy" id="copy-tiktok"></pre>
+          <div class="social-meta">
+            <span class="chip">3–5 hashtags</span>
+            <span class="chip" id="tags-tiktok"></span>
+          </div>
+          <button class="btn btn-outline btn-small copy-btn" data-target="copy-tiktok">Copy post</button>
+        </div>
+      </div>
+
+      <div class="social-panel is-hidden" id="panel-instagram" data-platform-panel="instagram">
+        <div class="social-card">
+          <h3>Caption + image guide</h3>
+          <pre class="social-copy" id="copy-instagram"></pre>
+          <div class="social-meta">
+            <span class="chip">15–30 hashtags</span>
+            <span class="chip" id="tags-instagram"></span>
+          </div>
+          <div class="image-guide">
+            <strong>Image placement:</strong>
+            <ol>
+              <li>Slide 1 — the sky-map screenshot (the "proof" hook)</li>
+              <li>Slide 2 — the ephemeris data table, sign column circled</li>
+              <li>Slide 3 — the true-sky wheel</li>
+              <li>Slide 4 — CTA card: "Check your own at starchart13.com"</li>
+            </ol>
+          </div>
+          <button class="btn btn-outline btn-small copy-btn" data-target="copy-instagram">Copy caption</button>
+        </div>
+      </div>
+
+      <div class="social-panel is-hidden" id="panel-facebook" data-platform-panel="facebook">
+        <div class="social-card">
+          <h3>Discussion-starter post</h3>
+          <pre class="social-copy" id="copy-facebook"></pre>
+          <div class="social-meta">
+            <span class="chip">0–2 hashtags</span>
+          </div>
+          <button class="btn btn-outline btn-small copy-btn" data-target="copy-facebook">Copy post</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p>Open-source · positions calculated with <a href="https://github.com/cosinekitty/astronomy" target="_blank" rel="noopener">Astronomy Engine</a>. Not a substitute for professional astronomical or astrological consultation, whichever you were hoping for.</p>
+    <a href="https://starchart13.com" target="_blank" rel="noopener">starchart13.com →</a>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/astronomy-engine/astronomy.browser.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
